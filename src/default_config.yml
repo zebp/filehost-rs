@@ -1,0 +1,28 @@
+# All of the keys that a user can provide in the "key" header to be permitted to upload a file.
+# The user *must* specify one of the following keys.
+keys:
+  - "some_example_keys"
+
+# The max file of any given file in kilobytes.
+max_file_size: 10000
+
+# The directory where all uploads will be placed
+upload_directory: "uploads"
+
+# The template for the redirect location.
+# This should be to where ever you want your file to be.
+redirect_template: "uploads/$FILE"
+
+# The name generator that filehost-rs will use to generate file names.
+name_generator:
+  # Generates a random non-negative number as the name.
+  type: Numeric
+
+  # Generates a random alphanumeric string with the specified length
+  # type: Alphanumeric
+  # length: 10
+
+  # Generates a name like Gyfcat's name format  
+  # type: Gyfcat
+  # adjective_count: 2
+  # noun_count: 1
