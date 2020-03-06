@@ -26,7 +26,8 @@ pub async fn upload(
     let mut name = None;
 
     while let Some(Ok(field)) = payload.next().await {
-        name = Some(upload_file(config, field).await?);
+        let file_name = upload_field(config, field).await?;
+        name = Some(file_name);
     }
 
     let response = match name {
@@ -39,7 +40,7 @@ pub async fn upload(
     Ok(response)
 }
 
-async fn upload_file(config: &Config, mut field: Field) -> Result<String, Error> {
+async fn upload_field(config: &Config, mut field: Field) -> Result<String, Error> {
     let name = config.name_generator.generate_name();
     let name = field
         .content_disposition()
