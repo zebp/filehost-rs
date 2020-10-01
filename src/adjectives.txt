@@ -97,14 +97,11 @@ Better
 Bewildered
 Big
 Billowy
-Bite-sized
 Bitter
 Bizarre
 Black
-Black-and-white
 Bloody
 Blue
-Blue-eyed
 Blushing
 Boiling
 Boorish
@@ -307,8 +304,6 @@ Exciting
 Exclusive
 Exotic
 Expensive
-Extra-large
-Extra-small
 Exuberant
 Exultant
 Fabulous
@@ -324,7 +319,6 @@ Fanatical
 Fancy
 Fantastic
 Far
-Far-flung
 Fascinated
 Fast
 Fat
@@ -435,7 +429,6 @@ Hanging
 Hapless
 Happy
 Hard
-Hard-to-find
 Harmonious
 Harsh
 Hateful
@@ -451,7 +444,6 @@ Hesitant
 Hideous
 High
 Highfalutin
-High-pitched
 Hilarious
 Hissing
 Historical
@@ -480,8 +472,6 @@ Idiotic
 Ignorant
 Ill
 Illegal
-Ill-fated
-Ill-informed
 Illustrious
 Imaginary
 Immense
@@ -564,7 +554,6 @@ Living
 Lonely
 Long
 Longing
-Long-term
 Loose
 Lopsided
 Loud
@@ -683,7 +672,6 @@ Oceanic
 Odd
 Offbeat
 Old
-Old-fashioned
 Omniscient
 One
 Onerous
@@ -842,7 +830,6 @@ Scintillating
 Scrawny
 Screeching
 Second
-Second-hand
 Secret
 Secretive
 Sedate
@@ -969,7 +956,6 @@ Tawdry
 Tearful
 Tedious
 Teeny
-Teeny-tiny
 Telling
 Temporary
 Ten
@@ -1088,10 +1074,6 @@ Watery
 Weak
 Wealthy
 Weary
-Well-groomed
-Well-made
-Well-off
-Well-to-do
 Wet
 Whimsical
 Whispering
@@ -1100,7 +1082,6 @@ Whole
 Wholesale
 Wicked
 Wide
-Wide-eyed
 Wiggly
 Wild
 Willing
