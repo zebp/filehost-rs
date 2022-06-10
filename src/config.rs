@@ -49,7 +49,7 @@ impl NameGenerator {
             Self::Alphanumeric { length } => {
                 let mut rng = thread_rng();
                 std::iter::repeat(())
-                    .map(|()| rng.sample(Alphanumeric))
+                    .map(|()| rng.sample(Alphanumeric) as char)
                     .take(length)
                     .collect()
             },

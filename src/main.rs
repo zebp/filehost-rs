@@ -7,7 +7,7 @@ use actix_web::{web::Data, App, HttpServer};
 
 use crate::config::Config;
 
-#[actix_rt::main]
+#[actix_web::main]
 async fn main() {
     let config = Config::load().expect("could not load config");
     let data = Data::new(config);

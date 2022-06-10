@@ -1,5 +1,5 @@
 use actix_multipart::*;
-use actix_web::{http::header::LOCATION, post, web::Data, Error, HttpRequest, HttpResponse};
+use actix_web::{http::header::LOCATION, post, web::Data, Error, HttpRequest, HttpResponse, error::PayloadError};
 use async_std::fs::File;
 use futures::{AsyncWriteExt, StreamExt};
 
@@ -32,7 +32,7 @@ pub async fn upload(
 
     let response = match name {
         Some(name) => HttpResponse::PermanentRedirect()
-            .header(LOCATION, config.redirect_template.replace("$FILE", &name))
+            .append_header((LOCATION, config.redirect_template.replace("$FILE", &name)))
             .finish(),
         None => HttpResponse::BadRequest().body("no files uploaded"),
     };
@@ -44,8 +44,8 @@ async fn upload_field(config: &Config, mut field: Field) -> Result<String, Error
     let name = config.name_generator.generate_name();
     let name = field
         .content_disposition()
-        .and_then(|content_disposition| content_disposition.get_filename().map(String::from))
-        .and_then(|ext| ext.split(".").last().map(String::from))
+        .get_filename()
+        .and_then(|ext| ext.split('.').last().map(String::from))
         .map(|ext| format!("{}.{}", name, ext))
         .unwrap_or(name);
 
@@ -57,9 +57,7 @@ async fn upload_field(config: &Config, mut field: Field) -> Result<String, Error
         length += bytes.len();
 
         if length / 1000 > config.max_file_size {
-            return Err(Error::from(
-                HttpResponse::PayloadTooLarge().body("payload is too big"),
-            ));
+            return Err(PayloadError::Overflow)?;
         }
 
         file.write_all(&bytes).await?;
